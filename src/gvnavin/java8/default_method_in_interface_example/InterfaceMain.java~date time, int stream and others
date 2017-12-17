@@ -1,0 +1,21 @@
+package gvnavin.java8.default_method_in_interface_example;
+
+/**
+ * Created by gnavin on 5/13/16.
+ */
+public class InterfaceMain {
+    public static void main(final String[] args) {
+        final Formula formula = new Formula();
+        System.out.println(formula.calculate(100));     // 100.0
+        System.out.println(formula.squareRoot(16));     // 4.0
+
+    }
+
+    public void testInAccessibleDefaultInterfaceMethods() {
+        IFormula formula1 = (a) -> {
+            //accessing default method inside lambda function gives compiler error
+            //squareRoot(a * 100);
+            return Math.sqrt(25);
+        };
+    }
+}
